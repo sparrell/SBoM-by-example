@@ -44,6 +44,8 @@ link to another page and put some blah blah here
 
 ## Blinky SBoM
 link to another page and put some blah blah here
+[Make normal blinky microSD](blinky1.md)
+[Make blinky microSD with SBoM](blinky2.md)
 
 ## Links to other SBoMs
 intent to link to examples by other people as I find them
