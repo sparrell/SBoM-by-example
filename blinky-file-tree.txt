@@ -1,0 +1,953 @@
+iex(blinky@nerves.local)5> tree
+.
+├── lib
+│   ├── asn1-5.0.9
+│   │   ├── ebin
+│   │   │   ├── asn1.app
+│   │   │   ├── asn1.appup
+│   │   │   ├── asn1_db.beam
+│   │   │   ├── asn1ct.beam
+│   │   │   ├── asn1ct_check.beam
+│   │   │   ├── asn1ct_constructed_ber_bin_v2.beam
+│   │   │   ├── asn1ct_constructed_per.beam
+│   │   │   ├── asn1ct_eval_ext.beam
+│   │   │   ├── asn1ct_func.beam
+│   │   │   ├── asn1ct_gen.beam
+│   │   │   ├── asn1ct_gen_ber_bin_v2.beam
+│   │   │   ├── asn1ct_gen_check.beam
+│   │   │   ├── asn1ct_gen_per.beam
+│   │   │   ├── asn1ct_imm.beam
+│   │   │   ├── asn1ct_name.beam
+│   │   │   ├── asn1ct_parser2.beam
+│   │   │   ├── asn1ct_pretty_format.beam
+│   │   │   ├── asn1ct_rtt.beam
+│   │   │   ├── asn1ct_table.beam
+│   │   │   ├── asn1ct_tok.beam
+│   │   │   ├── asn1ct_value.beam
+│   │   │   └── asn1rt_nif.beam
+│   │   └── priv
+│   │       └── lib
+│   │           └── asn1rt_nif.so
+│   ├── blinky-0.1.0
+│   │   └── ebin
+│   │       ├── Elixir.Blinky.Application.beam
+│   │       ├── Elixir.Blinky.beam
+│   │       └── blinky.app
+│   ├── compiler-7.4.9
+│   │   └── ebin
+│   │       ├── beam_a.beam
+│   │       ├── beam_asm.beam
+│   │       ├── beam_block.beam
+│   │       ├── beam_clean.beam
+│   │       ├── beam_dict.beam
+│   │       ├── beam_disasm.beam
+│   │       ├── beam_except.beam
+│   │       ├── beam_flatten.beam
+│   │       ├── beam_jump.beam
+│   │       ├── beam_kernel_to_ssa.beam
+│   │       ├── beam_listing.beam
+│   │       ├── beam_opcodes.beam
+│   │       ├── beam_peep.beam
+│   │       ├── beam_ssa.beam
+│   │       ├── beam_ssa_bsm.beam
+│   │       ├── beam_ssa_codegen.beam
+│   │       ├── beam_ssa_dead.beam
+│   │       ├── beam_ssa_funs.beam
+│   │       ├── beam_ssa_lint.beam
+│   │       ├── beam_ssa_opt.beam
+│   │       ├── beam_ssa_pp.beam
+│   │       ├── beam_ssa_pre_codegen.beam
+│   │       ├── beam_ssa_recv.beam
+│   │       ├── beam_ssa_share.beam
+│   │       ├── beam_ssa_type.beam
+│   │       ├── beam_trim.beam
+│   │       ├── beam_utils.beam
+│   │       ├── beam_validator.beam
+│   │       ├── beam_z.beam
+│   │       ├── cerl.beam
+│   │       ├── cerl_clauses.beam
+│   │       ├── cerl_inline.beam
+│   │       ├── cerl_sets.beam
+│   │       ├── cerl_trees.beam
+│   │       ├── compile.beam
+│   │       ├── compiler.app
+│   │       ├── compiler.appup
+│   │       ├── core_lib.beam
+│   │       ├── core_lint.beam
+│   │       ├── core_parse.beam
+│   │       ├── core_pp.beam
+│   │       ├── core_scan.beam
+│   │       ├── erl_bifs.beam
+│   │       ├── rec_env.beam
+│   │       ├── sys_core_alias.beam
+│   │       ├── sys_core_bsm.beam
+│   │       ├── sys_core_fold.beam
+│   │       ├── sys_core_fold_lists.beam
+│   │       ├── sys_core_inline.beam
+│   │       ├── sys_pre_attributes.beam
+│   │       ├── v3_core.beam
+│   │       ├── v3_kernel.beam
+│   │       └── v3_kernel_pp.beam
+│   ├── crypto-4.6.2
+│   │   ├── ebin
+│   │   │   ├── crypto.app
+│   │   │   ├── crypto.appup
+│   │   │   ├── crypto.beam
+│   │   │   └── crypto_ec_curves.beam
+│   │   └── priv
+│   │       └── lib
+│   │           ├── crypto.so
+│   │           ├── crypto_callback.so
+│   │           └── otp_test_engine.so
+│   ├── dns-2.1.2
+│   │   └── ebin
+│   │       ├── Elixir.DNS.Header.beam
+│   │       ├── Elixir.DNS.Query.beam
+│   │       ├── Elixir.DNS.Record.beam
+│   │       ├── Elixir.DNS.Resource.beam
+│   │       ├── Elixir.DNS.Server.beam
+│   │       ├── Elixir.DNS.beam
+│   │       ├── Elixir.ServerExample.beam
+│   │       └── dns.app
+│   ├── elixir-1.9.4
+│   │   └── ebin
+│   │       ├── Elixir.Access.beam
+│   │       ├── Elixir.Agent.Server.beam
+│   │       ├── Elixir.Agent.beam
+│   │       ├── Elixir.Application.beam
+│   │       ├── Elixir.ArgumentError.beam
+│   │       ├── Elixir.ArithmeticError.beam
+│   │       ├── Elixir.Atom.beam
+│   │       ├── Elixir.BadArityError.beam
+│   │       ├── Elixir.BadBooleanError.beam
+│   │       ├── Elixir.BadFunctionError.beam
+│   │       ├── Elixir.BadMapError.beam
+│   │       ├── Elixir.BadStructError.beam
+│   │       ├── Elixir.Base.beam
+│   │       ├── Elixir.Behaviour.beam
+│   │       ├── Elixir.Bitwise.beam
+│   │       ├── Elixir.Calendar.ISO.beam
+│   │       ├── Elixir.Calendar.TimeZoneDatabase.beam
+│   │       ├── Elixir.Calendar.UTCOnlyTimeZoneDatabase.beam
+│   │       ├── Elixir.Calendar.beam
+│   │       ├── Elixir.CaseClauseError.beam
+│   │       ├── Elixir.Code.Formatter.beam
+│   │       ├── Elixir.Code.Identifier.beam
+│   │       ├── Elixir.Code.LoadError.beam
+│   │       ├── Elixir.Code.Typespec.beam
+│   │       ├── Elixir.Code.beam
+│   │       ├── Elixir.Collectable.BitString.beam
+│   │       ├── Elixir.Collectable.File.Stream.beam
+│   │       ├── Elixir.Collectable.HashDict.beam
+│   │       ├── Elixir.Collectable.HashSet.beam
+│   │       ├── Elixir.Collectable.IO.Stream.beam
+│   │       ├── Elixir.Collectable.List.beam
+│   │       ├── Elixir.Collectable.Map.beam
+│   │       ├── Elixir.Collectable.MapSet.beam
+│   │       ├── Elixir.Collectable.beam
+│   │       ├── Elixir.CompileError.beam
+│   │       ├── Elixir.CondClauseError.beam
+│   │       ├── Elixir.Config.Provider.beam
+│   │       ├── Elixir.Config.Reader.beam
+│   │       ├── Elixir.Config.beam
+│   │       ├── Elixir.Date.Range.beam
+│   │       ├── Elixir.Date.beam
+│   │       ├── Elixir.DateTime.beam
+│   │       ├── Elixir.Dict.beam
+│   │       ├── Elixir.DynamicSupervisor.beam
+│   │       ├── Elixir.Enum.EmptyError.beam
+│   │       ├── Elixir.Enum.OutOfBoundsError.beam
+│   │       ├── Elixir.Enum.beam
+│   │       ├── Elixir.Enumerable.Date.Range.beam
+│   │       ├── Elixir.Enumerable.File.Stream.beam
+│   │       ├── Elixir.Enumerable.Function.beam
+│   │       ├── Elixir.Enumerable.GenEvent.Stream.beam
+│   │       ├── Elixir.Enumerable.HashDict.beam
+│   │       ├── Elixir.Enumerable.HashSet.beam
+│   │       ├── Elixir.Enumerable.IO.Stream.beam
+│   │       ├── Elixir.Enumerable.List.beam
+│   │       ├── Elixir.Enumerable.Map.beam
+│   │       ├── Elixir.Enumerable.MapSet.beam
+│   │       ├── Elixir.Enumerable.Range.beam
+│   │       ├── Elixir.Enumerable.Stream.beam
+│   │       ├── Elixir.Enumerable.beam
+│   │       ├── Elixir.ErlangError.beam
+│   │       ├── Elixir.Exception.beam
+│   │       ├── Elixir.File.CopyError.beam
+│   │       ├── Elixir.File.Error.beam
+│   │       ├── Elixir.File.LinkError.beam
+│   │       ├── Elixir.File.RenameError.beam
+│   │       ├── Elixir.File.Stat.beam
+│   │       ├── Elixir.File.Stream.beam
+│   │       ├── Elixir.File.beam
+│   │       ├── Elixir.Float.beam
+│   │       ├── Elixir.Function.beam
+│   │       ├── Elixir.FunctionClauseError.beam
+│   │       ├── Elixir.GenEvent.Stream.beam
+│   │       ├── Elixir.GenEvent.beam
+│   │       ├── Elixir.GenServer.beam
+│   │       ├── Elixir.HashDict.beam
+│   │       ├── Elixir.HashSet.beam
+│   │       ├── Elixir.IO.ANSI.Docs.beam
+│   │       ├── Elixir.IO.ANSI.Sequence.beam
+│   │       ├── Elixir.IO.ANSI.beam
+│   │       ├── Elixir.IO.Stream.beam
+│   │       ├── Elixir.IO.StreamError.beam
+│   │       ├── Elixir.IO.beam
+│   │       ├── Elixir.Inspect.Algebra.beam
+│   │       ├── Elixir.Inspect.Any.beam
+│   │       ├── Elixir.Inspect.Atom.beam
+│   │       ├── Elixir.Inspect.BitString.beam
+│   │       ├── Elixir.Inspect.Date.Range.beam
+│   │       ├── Elixir.Inspect.Date.beam
+│   │       ├── Elixir.Inspect.DateTime.beam
+│   │       ├── Elixir.Inspect.Error.beam
+│   │       ├── Elixir.Inspect.Float.beam
+│   │       ├── Elixir.Inspect.Function.beam
+│   │       ├── Elixir.Inspect.HashDict.beam
+│   │       ├── Elixir.Inspect.HashSet.beam
+│   │       ├── Elixir.Inspect.Integer.beam
+│   │       ├── Elixir.Inspect.List.beam
+│   │       ├── Elixir.Inspect.Map.beam
+│   │       ├── Elixir.Inspect.MapSet.beam
+│   │       ├── Elixir.Inspect.NaiveDateTime.beam
+│   │       ├── Elixir.Inspect.Opts.beam
+│   │       ├── Elixir.Inspect.PID.beam
+│   │       ├── Elixir.Inspect.Port.beam
+│   │       ├── Elixir.Inspect.Range.beam
+│   │       ├── Elixir.Inspect.Reference.beam
+│   │       ├── Elixir.Inspect.Regex.beam
+│   │       ├── Elixir.Inspect.Stream.beam
+│   │       ├── Elixir.Inspect.Time.beam
+│   │       ├── Elixir.Inspect.Tuple.beam
+│   │       ├── Elixir.Inspect.Version.Requirement.beam
+│   │       ├── Elixir.Inspect.Version.beam
+│   │       ├── Elixir.Inspect.beam
+│   │       ├── Elixir.Integer.beam
+│   │       ├── Elixir.Kernel.CLI.beam
+│   │       ├── Elixir.Kernel.ErrorHandler.beam
+│   │       ├── Elixir.Kernel.LexicalTracker.beam
+│   │       ├── Elixir.Kernel.ParallelCompiler.beam
+│   │       ├── Elixir.Kernel.ParallelRequire.beam
+│   │       ├── Elixir.Kernel.SpecialForms.beam
+│   │       ├── Elixir.Kernel.Typespec.beam
+│   │       ├── Elixir.Kernel.Utils.beam
+│   │       ├── Elixir.Kernel.beam
+│   │       ├── Elixir.KeyError.beam
+│   │       ├── Elixir.Keyword.beam
+│   │       ├── Elixir.List.Chars.Atom.beam
+│   │       ├── Elixir.List.Chars.BitString.beam
+│   │       ├── Elixir.List.Chars.Float.beam
+│   │       ├── Elixir.List.Chars.Integer.beam
+│   │       ├── Elixir.List.Chars.List.beam
+│   │       ├── Elixir.List.Chars.beam
+│   │       ├── Elixir.List.beam
+│   │       ├── Elixir.Macro.Env.beam
+│   │       ├── Elixir.Macro.beam
+│   │       ├── Elixir.Map.beam
+│   │       ├── Elixir.MapSet.beam
+│   │       ├── Elixir.MatchError.beam
+│   │       ├── Elixir.Module.LocalsTracker.beam
+│   │       ├── Elixir.Module.beam
+│   │       ├── Elixir.NaiveDateTime.beam
+│   │       ├── Elixir.Node.beam
+│   │       ├── Elixir.OptionParser.ParseError.beam
+│   │       ├── Elixir.OptionParser.beam
+│   │       ├── Elixir.Path.Wildcard.beam
+│   │       ├── Elixir.Path.beam
+│   │       ├── Elixir.Port.beam
+│   │       ├── Elixir.Process.beam
+│   │       ├── Elixir.Protocol.UndefinedError.beam
+│   │       ├── Elixir.Protocol.beam
+│   │       ├── Elixir.Range.beam
+│   │       ├── Elixir.Record.Extractor.beam
+│   │       ├── Elixir.Record.beam
+│   │       ├── Elixir.Regex.CompileError.beam
+│   │       ├── Elixir.Regex.beam
+│   │       ├── Elixir.Registry.Partition.beam
+│   │       ├── Elixir.Registry.Supervisor.beam
+│   │       ├── Elixir.Registry.beam
+│   │       ├── Elixir.RuntimeError.beam
+│   │       ├── Elixir.Set.beam
+│   │       ├── Elixir.Stream.Reducers.beam
+│   │       ├── Elixir.Stream.beam
+│   │       ├── Elixir.String.Break.beam
+│   │       ├── Elixir.String.Casing.beam
+│   │       ├── Elixir.String.Chars.Atom.beam
+│   │       ├── Elixir.String.Chars.BitString.beam
+│   │       ├── Elixir.String.Chars.Date.beam
+│   │       ├── Elixir.String.Chars.DateTime.beam
+│   │       ├── Elixir.String.Chars.Float.beam
+│   │       ├── Elixir.String.Chars.Integer.beam
+│   │       ├── Elixir.String.Chars.List.beam
+│   │       ├── Elixir.String.Chars.NaiveDateTime.beam
+│   │       ├── Elixir.String.Chars.Time.beam
+│   │       ├── Elixir.String.Chars.URI.beam
+│   │       ├── Elixir.String.Chars.Version.Requirement.beam
+│   │       ├── Elixir.String.Chars.Version.beam
+│   │       ├── Elixir.String.Chars.beam
+│   │       ├── Elixir.String.Tokenizer.beam
+│   │       ├── Elixir.String.Unicode.beam
+│   │       ├── Elixir.String.beam
+│   │       ├── Elixir.StringIO.beam
+│   │       ├── Elixir.Supervisor.Default.beam
+│   │       ├── Elixir.Supervisor.Spec.beam
+│   │       ├── Elixir.Supervisor.beam
+│   │       ├── Elixir.SyntaxError.beam
+│   │       ├── Elixir.System.beam
+│   │       ├── Elixir.SystemLimitError.beam
+│   │       ├── Elixir.Task.Supervised.beam
+│   │       ├── Elixir.Task.Supervisor.beam
+│   │       ├── Elixir.Task.beam
+│   │       ├── Elixir.Time.beam
+│   │       ├── Elixir.TokenMissingError.beam
+│   │       ├── Elixir.TryClauseError.beam
+│   │       ├── Elixir.Tuple.beam
+│   │       ├── Elixir.URI.beam
+│   │       ├── Elixir.UndefinedFunctionError.beam
+│   │       ├── Elixir.UnicodeConversionError.beam
+│   │       ├── Elixir.Version.InvalidRequirementError.beam
+│   │       ├── Elixir.Version.InvalidVersionError.beam
+│   │       ├── Elixir.Version.Parser.beam
+│   │       ├── Elixir.Version.Requirement.beam
+│   │       ├── Elixir.Version.beam
+│   │       ├── Elixir.WithClauseError.beam
+│   │       ├── elixir.app
+│   │       ├── elixir.beam
+│   │       ├── elixir_aliases.beam
+│   │       ├── elixir_bitstring.beam
+│   │       ├── elixir_bootstrap.beam
+│   │       ├── elixir_clauses.beam
+│   │       ├── elixir_code_server.beam
+│   │       ├── elixir_compiler.beam
+│   │       ├── elixir_config.beam
+│   │       ├── elixir_def.beam
+│   │       ├── elixir_dispatch.beam
+│   │       ├── elixir_env.beam
+│   │       ├── elixir_erl.beam
+│   │       ├── elixir_erl_clauses.beam
+│   │       ├── elixir_erl_compiler.beam
+│   │       ├── elixir_erl_for.beam
+│   │       ├── elixir_erl_pass.beam
+│   │       ├── elixir_erl_try.beam
+│   │       ├── elixir_erl_var.beam
+│   │       ├── elixir_errors.beam
+│   │       ├── elixir_expand.beam
+│   │       ├── elixir_fn.beam
+│   │       ├── elixir_import.beam
+│   │       ├── elixir_interpolation.beam
+│   │       ├── elixir_lexical.beam
+│   │       ├── elixir_locals.beam
+│   │       ├── elixir_map.beam
+│   │       ├── elixir_module.beam
+│   │       ├── elixir_overridable.beam
+│   │       ├── elixir_parser.beam
+│   │       ├── elixir_quote.beam
+│   │       ├── elixir_rewrite.beam
+│   │       ├── elixir_sup.beam
+│   │       ├── elixir_tokenizer.beam
+│   │       └── elixir_utils.beam
+│   ├── iex-1.9.4
+│   │   └── ebin
+│   │       ├── Elixir.IEx.App.beam
+│   │       ├── Elixir.IEx.Autocomplete.beam
+│   │       ├── Elixir.IEx.Broker.beam
+│   │       ├── Elixir.IEx.CLI.beam
+│   │       ├── Elixir.IEx.Config.beam
+│   │       ├── Elixir.IEx.Evaluator.beam
+│   │       ├── Elixir.IEx.Helpers.beam
+│   │       ├── Elixir.IEx.History.beam
+│   │       ├── Elixir.IEx.Info.Any.beam
+│   │       ├── Elixir.IEx.Info.Atom.beam
+│   │       ├── Elixir.IEx.Info.BitString.beam
+│   │       ├── Elixir.IEx.Info.Date.beam
+│   │       ├── Elixir.IEx.Info.Float.beam
+│   │       ├── Elixir.IEx.Info.Function.beam
+│   │       ├── Elixir.IEx.Info.Integer.beam
+│   │       ├── Elixir.IEx.Info.List.beam
+│   │       ├── Elixir.IEx.Info.Map.beam
+│   │       ├── Elixir.IEx.Info.NaiveDateTime.beam
+│   │       ├── Elixir.IEx.Info.PID.beam
+│   │       ├── Elixir.IEx.Info.Port.beam
+│   │       ├── Elixir.IEx.Info.Reference.beam
+│   │       ├── Elixir.IEx.Info.Time.beam
+│   │       ├── Elixir.IEx.Info.Tuple.beam
+│   │       ├── Elixir.IEx.Info.beam
+│   │       ├── Elixir.IEx.Introspection.beam
+│   │       ├── Elixir.IEx.Pry.beam
+│   │       ├── Elixir.IEx.Server.beam
+│   │       ├── Elixir.IEx.State.beam
+│   │       ├── Elixir.IEx.beam
+│   │       └── iex.app
+│   ├── kernel-6.5
+│   │   └── ebin
+│   │       ├── application.beam
+│   │       ├── application_controller.beam
+│   │       ├── application_master.beam
+│   │       ├── application_starter.beam
+│   │       ├── auth.beam
+│   │       ├── code.beam
+│   │       ├── code_server.beam
+│   │       ├── disk_log.beam
+│   │       ├── disk_log_1.beam
+│   │       ├── disk_log_server.beam
+│   │       ├── disk_log_sup.beam
+│   │       ├── dist_ac.beam
+│   │       ├── dist_util.beam
+│   │       ├── erl_boot_server.beam
+│   │       ├── erl_compile_server.beam
+│   │       ├── erl_ddll.beam
+│   │       ├── erl_distribution.beam
+│   │       ├── erl_epmd.beam
+│   │       ├── erl_reply.beam
+│   │       ├── erl_signal_handler.beam
+│   │       ├── error_handler.beam
+│   │       ├── error_logger.beam
+│   │       ├── erts_debug.beam
+│   │       ├── file.beam
+│   │       ├── file_io_server.beam
+│   │       ├── file_server.beam
+│   │       ├── gen_sctp.beam
+│   │       ├── gen_tcp.beam
+│   │       ├── gen_udp.beam
+│   │       ├── global.beam
+│   │       ├── global_group.beam
+│   │       ├── global_search.beam
+│   │       ├── group.beam
+│   │       ├── group_history.beam
+│   │       ├── heart.beam
+│   │       ├── hipe_unified_loader.beam
+│   │       ├── inet.beam
+│   │       ├── inet6_sctp.beam
+│   │       ├── inet6_tcp.beam
+│   │       ├── inet6_tcp_dist.beam
+│   │       ├── inet6_udp.beam
+│   │       ├── inet_config.beam
+│   │       ├── inet_db.beam
+│   │       ├── inet_dns.beam
+│   │       ├── inet_gethost_native.beam
+│   │       ├── inet_hosts.beam
+│   │       ├── inet_parse.beam
+│   │       ├── inet_res.beam
+│   │       ├── inet_sctp.beam
+│   │       ├── inet_tcp.beam
+│   │       ├── inet_tcp_dist.beam
+│   │       ├── inet_udp.beam
+│   │       ├── kernel.app
+│   │       ├── kernel.appup
+│   │       ├── kernel.beam
+│   │       ├── kernel_config.beam
+│   │       ├── kernel_refc.beam
+│   │       ├── local_tcp.beam
+│   │       ├── local_udp.beam
+│   │       ├── logger.beam
+│   │       ├── logger_backend.beam
+│   │       ├── logger_config.beam
+│   │       ├── logger_disk_log_h.beam
+│   │       ├── logger_filters.beam
+│   │       ├── logger_formatter.beam
+│   │       ├── logger_h_common.beam
+│   │       ├── logger_handler_watcher.beam
+│   │       ├── logger_olp.beam
+│   │       ├── logger_proxy.beam
+│   │       ├── logger_server.beam
+│   │       ├── logger_simple_h.beam
+│   │       ├── logger_std_h.beam
+│   │       ├── logger_sup.beam
+│   │       ├── net.beam
+│   │       ├── net_adm.beam
+│   │       ├── net_kernel.beam
+│   │       ├── os.beam
+│   │       ├── pg2.beam
+│   │       ├── ram_file.beam
+│   │       ├── raw_file_io.beam
+│   │       ├── raw_file_io_compressed.beam
+│   │       ├── raw_file_io_deflate.beam
+│   │       ├── raw_file_io_delayed.beam
+│   │       ├── raw_file_io_inflate.beam
+│   │       ├── raw_file_io_list.beam
+│   │       ├── raw_file_io_raw.beam
+│   │       ├── rpc.beam
+│   │       ├── seq_trace.beam
+│   │       ├── standard_error.beam
+│   │       ├── user.beam
+│   │       ├── user_drv.beam
+│   │       ├── user_sup.beam
+│   │       └── wrap_log_reader.beam
+│   ├── logger-1.9.4
+│   │   └── ebin
+│   │       ├── Elixir.Logger.App.beam
+│   │       ├── Elixir.Logger.BackendSupervisor.beam
+│   │       ├── Elixir.Logger.Backends.Console.beam
+│   │       ├── Elixir.Logger.Config.beam
+│   │       ├── Elixir.Logger.ErlangHandler.beam
+│   │       ├── Elixir.Logger.ErrorHandler.beam
+│   │       ├── Elixir.Logger.Formatter.beam
+│   │       ├── Elixir.Logger.Translator.beam
+│   │       ├── Elixir.Logger.Utils.beam
+│   │       ├── Elixir.Logger.Watcher.beam
+│   │       ├── Elixir.Logger.beam
+│   │       └── logger.app
+│   ├── mdns-1.0.3
+│   │   └── ebin
+│   │       ├── Elixir.Mdns.Client.Device.beam
+│   │       ├── Elixir.Mdns.Client.State.beam
+│   │       ├── Elixir.Mdns.Client.beam
+│   │       ├── Elixir.Mdns.EventManager.beam
+│   │       ├── Elixir.Mdns.Server.Service.beam
+│   │       ├── Elixir.Mdns.Server.State.beam
+│   │       ├── Elixir.Mdns.Server.beam
+│   │       ├── Elixir.Mdns.Supervisor.beam
+│   │       ├── Elixir.Mdns.beam
+│   │       └── mdns.app
+│   ├── muontrap-0.5.0
+│   │   ├── ebin
+│   │   │   ├── Elixir.MuonTrap.Cgroups.beam
+│   │   │   ├── Elixir.MuonTrap.Daemon.State.beam
+│   │   │   ├── Elixir.MuonTrap.Daemon.beam
+│   │   │   ├── Elixir.MuonTrap.Options.beam
+│   │   │   ├── Elixir.MuonTrap.Port.beam
+│   │   │   ├── Elixir.MuonTrap.beam
+│   │   │   └── muontrap.app
+│   │   └── priv
+│   │       └── muontrap
+│   ├── nerves_firmware_ssh-0.4.4
+│   │   ├── ebin
+│   │   │   ├── Elixir.Mix.Tasks.Firmware.Gen.Script.beam
+│   │   │   ├── Elixir.Mix.Tasks.Firmware.Push.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.Application.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.Command.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.Fwup.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.Handler.State.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.Handler.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.Keys.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.NoShell.beam
+│   │   │   ├── Elixir.Nerves.Firmware.SSH.beam
+│   │   │   └── nerves_firmware_ssh.app
+│   │   └── priv
+│   │       ├── ssh_host_rsa_key
+│   │       ├── ssh_host_rsa_key.pub
+│   │       └── templates
+│   │           └── script.upload.eex
+│   ├── nerves_init_gadget-0.7.0
+│   │   └── ebin
+│   │       ├── Elixir.Nerves.InitGadget.Application.beam
+│   │       ├── Elixir.Nerves.InitGadget.NetworkManager.State.beam
+│   │       ├── Elixir.Nerves.InitGadget.NetworkManager.beam
+│   │       ├── Elixir.Nerves.InitGadget.Options.beam
+│   │       ├── Elixir.Nerves.InitGadget.SSHConsole.beam
+│   │       ├── Elixir.Nerves.InitGadget.beam
+│   │       └── nerves_init_gadget.app
+│   ├── nerves_network-0.5.5
+│   │   ├── ebin
+│   │   │   ├── Elixir.Nerves.Network.Application.beam
+│   │   │   ├── Elixir.Nerves.Network.Config.beam
+│   │   │   ├── Elixir.Nerves.Network.DHCPManager.beam
+│   │   │   ├── Elixir.Nerves.Network.IFSupervisor.beam
+│   │   │   ├── Elixir.Nerves.Network.LinkLocalManager.beam
+│   │   │   ├── Elixir.Nerves.Network.Resolvconf.beam
+│   │   │   ├── Elixir.Nerves.Network.StaticManager.beam
+│   │   │   ├── Elixir.Nerves.Network.Types.beam
+│   │   │   ├── Elixir.Nerves.Network.Udhcpc.beam
+│   │   │   ├── Elixir.Nerves.Network.Utils.beam
+│   │   │   ├── Elixir.Nerves.Network.WiFiManager.beam
+│   │   │   ├── Elixir.Nerves.Network.beam
+│   │   │   └── nerves_network.app
+│   │   └── priv
+│   │       └── udhcpc_wrapper
+│   ├── nerves_network_interface-0.4.6
+│   │   ├── ebin
+│   │   │   ├── Elixir.Nerves.NetworkInterface.Application.beam
+│   │   │   ├── Elixir.Nerves.NetworkInterface.Worker.beam
+│   │   │   ├── Elixir.Nerves.NetworkInterface.beam
+│   │   │   └── nerves_network_interface.app
+│   │   └── priv
+│   │       └── netif
+│   ├── nerves_runtime-0.10.3
+│   │   ├── ebin
+│   │   │   ├── Elixir.Collectable.Nerves.Runtime.OutputLogger.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Application.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Helpers.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Init.beam
+│   │   │   ├── Elixir.Nerves.Runtime.KV.Mock.beam
+│   │   │   ├── Elixir.Nerves.Runtime.KV.UBootEnv.beam
+│   │   │   ├── Elixir.Nerves.Runtime.KV.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Kernel.UEvent.State.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Kernel.UEvent.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Log.KmsgParser.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Log.KmsgTailer.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Log.SyslogParser.beam
+│   │   │   ├── Elixir.Nerves.Runtime.Log.SyslogTailer.beam
+│   │   │   ├── Elixir.Nerves.Runtime.OutputLogger.beam
+│   │   │   ├── Elixir.Nerves.Runtime.beam
+│   │   │   └── nerves_runtime.app
+│   │   └── priv
+│   │       └── nerves_runtime
+│   ├── nerves_time-0.3.2
+│   │   ├── ebin
+│   │   │   ├── Elixir.NervesTime.Application.beam
+│   │   │   ├── Elixir.NervesTime.FileTime.beam
+│   │   │   ├── Elixir.NervesTime.Ntpd.State.beam
+│   │   │   ├── Elixir.NervesTime.Ntpd.beam
+│   │   │   ├── Elixir.NervesTime.SaneTime.beam
+│   │   │   ├── Elixir.NervesTime.beam
+│   │   │   └── nerves_time.app
+│   │   └── priv
+│   │       └── ntpd_script
+│   ├── nerves_wpa_supplicant-0.5.2
+│   │   ├── ebin
+│   │   │   ├── Elixir.Nerves.WpaSupplicant.Application.beam
+│   │   │   ├── Elixir.Nerves.WpaSupplicant.Messages.beam
+│   │   │   ├── Elixir.Nerves.WpaSupplicant.beam
+│   │   │   └── nerves_wpa_supplicant.app
+│   │   └── priv
+│   │       └── wpa_ex
+│   ├── one_dhcpd-0.2.3
+│   │   ├── ebin
+│   │   │   ├── Elixir.OneDHCPD.ARP.Entry.beam
+│   │   │   ├── Elixir.OneDHCPD.ARP.beam
+│   │   │   ├── Elixir.OneDHCPD.Application.beam
+│   │   │   ├── Elixir.OneDHCPD.IPCalculator.beam
+│   │   │   ├── Elixir.OneDHCPD.Message.beam
+│   │   │   ├── Elixir.OneDHCPD.Option.beam
+│   │   │   ├── Elixir.OneDHCPD.Options.beam
+│   │   │   ├── Elixir.OneDHCPD.Server.State.beam
+│   │   │   ├── Elixir.OneDHCPD.Server.beam
+│   │   │   ├── Elixir.OneDHCPD.Utility.beam
+│   │   │   ├── Elixir.OneDHCPD.beam
+│   │   │   └── one_dhcpd.app
+│   │   └── priv
+│   │       └── arp_set
+│   ├── public_key-1.7
+│   │   └── ebin
+│   │       ├── OTP-PUB-KEY.beam
+│   │       ├── PKCS-FRAME.beam
+│   │       ├── pubkey_cert.beam
+│   │       ├── pubkey_cert_records.beam
+│   │       ├── pubkey_crl.beam
+│   │       ├── pubkey_pbe.beam
+│   │       ├── pubkey_pem.beam
+│   │       ├── pubkey_ssh.beam
+│   │       ├── public_key.app
+│   │       ├── public_key.appup
+│   │       └── public_key.beam
+│   ├── ring_logger-0.8.0
+│   │   └── ebin
+│   │       ├── Elixir.RingLogger.Autoclient.beam
+│   │       ├── Elixir.RingLogger.Client.State.beam
+│   │       ├── Elixir.RingLogger.Client.beam
+│   │       ├── Elixir.RingLogger.Server.State.beam
+│   │       ├── Elixir.RingLogger.Server.beam
+│   │       ├── Elixir.RingLogger.beam
+│   │       └── ring_logger.app
+│   ├── runtime_tools-1.14
+│   │   ├── ebin
+│   │   │   ├── appmon_info.beam
+│   │   │   ├── dbg.beam
+│   │   │   ├── dyntrace.beam
+│   │   │   ├── erts_alloc_config.beam
+│   │   │   ├── msacc.beam
+│   │   │   ├── observer_backend.beam
+│   │   │   ├── runtime_tools.app
+│   │   │   ├── runtime_tools.appup
+│   │   │   ├── runtime_tools.beam
+│   │   │   ├── runtime_tools_sup.beam
+│   │   │   ├── scheduler.beam
+│   │   │   ├── system_information.beam
+│   │   │   └── ttb_autostart.beam
+│   │   └── priv
+│   │       └── lib
+│   │           ├── dyntrace.so
+│   │           ├── trace_file_drv.so
+│   │           └── trace_ip_drv.so
+│   ├── sasl-3.4.1
+│   │   └── ebin
+│   │       ├── alarm_handler.beam
+│   │       ├── erlsrv.beam
+│   │       ├── format_lib_supp.beam
+│   │       ├── misc_supp.beam
+│   │       ├── rb.beam
+│   │       ├── rb_format_supp.beam
+│   │       ├── release_handler.beam
+│   │       ├── release_handler_1.beam
+│   │       ├── sasl.app
+│   │       ├── sasl.appup
+│   │       ├── sasl.beam
+│   │       ├── sasl_report.beam
+│   │       ├── sasl_report_file_h.beam
+│   │       ├── sasl_report_tty_h.beam
+│   │       ├── systools.beam
+│   │       ├── systools_lib.beam
+│   │       ├── systools_make.beam
+│   │       ├── systools_rc.beam
+│   │       └── systools_relup.beam
+│   ├── shoehorn-0.6.0
+│   │   └── ebin
+│   │       ├── Elixir.Shoehorn.ApplicationController.beam
+│   │       ├── Elixir.Shoehorn.Handler.Ignore.beam
+│   │       ├── Elixir.Shoehorn.Handler.Proxy.beam
+│   │       ├── Elixir.Shoehorn.Handler.beam
+│   │       ├── Elixir.Shoehorn.Release.beam
+│   │       ├── Elixir.Shoehorn.Utils.beam
+│   │       ├── Elixir.Shoehorn.beam
+│   │       └── shoehorn.app
+│   ├── socket-0.3.13
+│   │   └── ebin
+│   │       ├── Elixir.Socket.Address.beam
+│   │       ├── Elixir.Socket.Datagram.Protocol.Port.beam
+│   │       ├── Elixir.Socket.Datagram.Protocol.beam
+│   │       ├── Elixir.Socket.Datagram.beam
+│   │       ├── Elixir.Socket.Error.beam
+│   │       ├── Elixir.Socket.Helpers.beam
+│   │       ├── Elixir.Socket.Host.beam
+│   │       ├── Elixir.Socket.Protocol.Port.beam
+│   │       ├── Elixir.Socket.Protocol.Tuple.beam
+│   │       ├── Elixir.Socket.Protocol.beam
+│   │       ├── Elixir.Socket.SOCKS.beam
+│   │       ├── Elixir.Socket.SSL.beam
+│   │       ├── Elixir.Socket.Stream.Protocol.Port.beam
+│   │       ├── Elixir.Socket.Stream.Protocol.Tuple.beam
+│   │       ├── Elixir.Socket.Stream.Protocol.beam
+│   │       ├── Elixir.Socket.Stream.beam
+│   │       ├── Elixir.Socket.TCP.beam
+│   │       ├── Elixir.Socket.UDP.beam
+│   │       ├── Elixir.Socket.Web.beam
+│   │       ├── Elixir.Socket.beam
+│   │       └── socket.app
+│   ├── ssh-4.8
+│   │   └── ebin
+│   │       ├── ssh.app
+│   │       ├── ssh.appup
+│   │       ├── ssh.beam
+│   │       ├── ssh_acceptor.beam
+│   │       ├── ssh_acceptor_sup.beam
+│   │       ├── ssh_app.beam
+│   │       ├── ssh_auth.beam
+│   │       ├── ssh_bits.beam
+│   │       ├── ssh_channel.beam
+│   │       ├── ssh_cli.beam
+│   │       ├── ssh_client_channel.beam
+│   │       ├── ssh_client_key_api.beam
+│   │       ├── ssh_connection.beam
+│   │       ├── ssh_connection_handler.beam
+│   │       ├── ssh_connection_sup.beam
+│   │       ├── ssh_daemon_channel.beam
+│   │       ├── ssh_dbg.beam
+│   │       ├── ssh_file.beam
+│   │       ├── ssh_info.beam
+│   │       ├── ssh_io.beam
+│   │       ├── ssh_message.beam
+│   │       ├── ssh_no_io.beam
+│   │       ├── ssh_options.beam
+│   │       ├── ssh_server_channel.beam
+│   │       ├── ssh_server_channel_sup.beam
+│   │       ├── ssh_server_key_api.beam
+│   │       ├── ssh_sftp.beam
+│   │       ├── ssh_sftpd.beam
+│   │       ├── ssh_sftpd_file.beam
+│   │       ├── ssh_sftpd_file_api.beam
+│   │       ├── ssh_shell.beam
+│   │       ├── ssh_subsystem_sup.beam
+│   │       ├── ssh_sup.beam
+│   │       ├── ssh_system_sup.beam
+│   │       ├── ssh_transport.beam
+│   │       ├── ssh_xfer.beam
+│   │       ├── sshc_sup.beam
+│   │       └── sshd_sup.beam
+│   ├── ssl-9.4
+│   │   └── ebin
+│   │       ├── dtls_connection.beam
+│   │       ├── dtls_connection_sup.beam
+│   │       ├── dtls_handshake.beam
+│   │       ├── dtls_listener_sup.beam
+│   │       ├── dtls_packet_demux.beam
+│   │       ├── dtls_record.beam
+│   │       ├── dtls_socket.beam
+│   │       ├── dtls_v1.beam
+│   │       ├── inet6_tls_dist.beam
+│   │       ├── inet_tls_dist.beam
+│   │       ├── ssl.app
+│   │       ├── ssl.appup
+│   │       ├── ssl.beam
+│   │       ├── ssl_admin_sup.beam
+│   │       ├── ssl_alert.beam
+│   │       ├── ssl_app.beam
+│   │       ├── ssl_certificate.beam
+│   │       ├── ssl_cipher.beam
+│   │       ├── ssl_cipher_format.beam
+│   │       ├── ssl_config.beam
+│   │       ├── ssl_connection.beam
+│   │       ├── ssl_connection_sup.beam
+│   │       ├── ssl_crl.beam
+│   │       ├── ssl_crl_cache.beam
+│   │       ├── ssl_crl_cache_api.beam
+│   │       ├── ssl_crl_hash_dir.beam
+│   │       ├── ssl_dh_groups.beam
+│   │       ├── ssl_dist_admin_sup.beam
+│   │       ├── ssl_dist_connection_sup.beam
+│   │       ├── ssl_dist_sup.beam
+│   │       ├── ssl_handshake.beam
+│   │       ├── ssl_listen_tracker_sup.beam
+│   │       ├── ssl_logger.beam
+│   │       ├── ssl_manager.beam
+│   │       ├── ssl_pem_cache.beam
+│   │       ├── ssl_pkix_db.beam
+│   │       ├── ssl_record.beam
+│   │       ├── ssl_session.beam
+│   │       ├── ssl_session_cache.beam
+│   │       ├── ssl_session_cache_api.beam
+│   │       ├── ssl_srp_primes.beam
+│   │       ├── ssl_sup.beam
+│   │       ├── ssl_v3.beam
+│   │       ├── tls_connection.beam
+│   │       ├── tls_connection_1_3.beam
+│   │       ├── tls_connection_sup.beam
+│   │       ├── tls_handshake.beam
+│   │       ├── tls_handshake_1_3.beam
+│   │       ├── tls_record.beam
+│   │       ├── tls_record_1_3.beam
+│   │       ├── tls_sender.beam
+│   │       ├── tls_socket.beam
+│   │       └── tls_v1.beam
+│   ├── stdlib-3.10
+│   │   └── ebin
+│   │       ├── array.beam
+│   │       ├── base64.beam
+│   │       ├── beam_lib.beam
+│   │       ├── binary.beam
+│   │       ├── c.beam
+│   │       ├── calendar.beam
+│   │       ├── dets.beam
+│   │       ├── dets_server.beam
+│   │       ├── dets_sup.beam
+│   │       ├── dets_utils.beam
+│   │       ├── dets_v9.beam
+│   │       ├── dict.beam
+│   │       ├── digraph.beam
+│   │       ├── digraph_utils.beam
+│   │       ├── edlin.beam
+│   │       ├── edlin_expand.beam
+│   │       ├── epp.beam
+│   │       ├── erl_abstract_code.beam
+│   │       ├── erl_anno.beam
+│   │       ├── erl_bits.beam
+│   │       ├── erl_compile.beam
+│   │       ├── erl_error.beam
+│   │       ├── erl_eval.beam
+│   │       ├── erl_expand_records.beam
+│   │       ├── erl_internal.beam
+│   │       ├── erl_lint.beam
+│   │       ├── erl_parse.beam
+│   │       ├── erl_posix_msg.beam
+│   │       ├── erl_pp.beam
+│   │       ├── erl_scan.beam
+│   │       ├── erl_tar.beam
+│   │       ├── error_logger_file_h.beam
+│   │       ├── error_logger_tty_h.beam
+│   │       ├── escript.beam
+│   │       ├── ets.beam
+│   │       ├── eval_bits.beam
+│   │       ├── file_sorter.beam
+│   │       ├── filelib.beam
+│   │       ├── filename.beam
+│   │       ├── gb_sets.beam
+│   │       ├── gb_trees.beam
+│   │       ├── gen.beam
+│   │       ├── gen_event.beam
+│   │       ├── gen_fsm.beam
+│   │       ├── gen_server.beam
+│   │       ├── gen_statem.beam
+│   │       ├── io.beam
+│   │       ├── io_lib.beam
+│   │       ├── io_lib_format.beam
+│   │       ├── io_lib_fread.beam
+│   │       ├── io_lib_pretty.beam
+│   │       ├── lists.beam
+│   │       ├── log_mf_h.beam
+│   │       ├── maps.beam
+│   │       ├── math.beam
+│   │       ├── ms_transform.beam
+│   │       ├── orddict.beam
+│   │       ├── ordsets.beam
+│   │       ├── otp_internal.beam
+│   │       ├── pool.beam
+│   │       ├── proc_lib.beam
+│   │       ├── proplists.beam
+│   │       ├── qlc.beam
+│   │       ├── qlc_pt.beam
+│   │       ├── queue.beam
+│   │       ├── rand.beam
+│   │       ├── random.beam
+│   │       ├── re.beam
+│   │       ├── sets.beam
+│   │       ├── shell.beam
+│   │       ├── shell_default.beam
+│   │       ├── slave.beam
+│   │       ├── sofs.beam
+│   │       ├── stdlib.app
+│   │       ├── stdlib.appup
+│   │       ├── string.beam
+│   │       ├── supervisor.beam
+│   │       ├── supervisor_bridge.beam
+│   │       ├── sys.beam
+│   │       ├── timer.beam
+│   │       ├── unicode.beam
+│   │       ├── unicode_util.beam
+│   │       ├── uri_string.beam
+│   │       ├── win32reg.beam
+│   │       └── zip.beam
+│   ├── system_registry-0.8.2
+│   │   └── ebin
+│   │       ├── Elixir.SystemRegistry.Application.beam
+│   │       ├── Elixir.SystemRegistry.Global.beam
+│   │       ├── Elixir.SystemRegistry.Node.beam
+│   │       ├── Elixir.SystemRegistry.Processor.Config.beam
+│   │       ├── Elixir.SystemRegistry.Processor.Server.beam
+│   │       ├── Elixir.SystemRegistry.Processor.State.beam
+│   │       ├── Elixir.SystemRegistry.Processor.Utils.beam
+│   │       ├── Elixir.SystemRegistry.Processor.beam
+│   │       ├── Elixir.SystemRegistry.Registration.beam
+│   │       ├── Elixir.SystemRegistry.Task.beam
+│   │       ├── Elixir.SystemRegistry.Transaction.beam
+│   │       ├── Elixir.SystemRegistry.Utils.beam
+│   │       ├── Elixir.SystemRegistry.beam
+│   │       └── system_registry.app
+│   ├── toolshed-0.2.11
+│   │   └── ebin
+│   │       ├── Elixir.Toolshed.HTTP.beam
+│   │       ├── Elixir.Toolshed.HW.beam
+│   │       ├── Elixir.Toolshed.Lsof.beam
+│   │       ├── Elixir.Toolshed.Misc.beam
+│   │       ├── Elixir.Toolshed.Nerves.beam
+│   │       ├── Elixir.Toolshed.Net.beam
+│   │       ├── Elixir.Toolshed.Top.beam
+│   │       ├── Elixir.Toolshed.Unix.beam
+│   │       ├── Elixir.Toolshed.beam
+│   │       └── toolshed.app
+│   └── uboot_env-0.1.1
+│       └── ebin
+│           ├── Elixir.Mix.Tasks.UbootEnv.Delete.beam
+│           ├── Elixir.Mix.Tasks.UbootEnv.Read.beam
+│           ├── Elixir.Mix.Tasks.UbootEnv.Write.beam
+│           ├── Elixir.Mix.UbootEnv.Utils.beam
+│           ├── Elixir.UBootEnv.Config.beam
+│           ├── Elixir.UBootEnv.Tools.beam
+│           ├── Elixir.UBootEnv.beam
+│           └── uboot_env.app
+└── releases
+    ├── 0.1.0
+    │   ├── consolidated
+    │   │   ├── Elixir.Collectable.beam
+    │   │   ├── Elixir.Enumerable.beam
+    │   │   ├── Elixir.IEx.Info.beam
+    │   │   ├── Elixir.Inspect.beam
+    │   │   ├── Elixir.List.Chars.beam
+    │   │   ├── Elixir.Socket.Datagram.Protocol.beam
+    │   │   ├── Elixir.Socket.Protocol.beam
+    │   │   ├── Elixir.Socket.Stream.Protocol.beam
+    │   │   └── Elixir.String.Chars.beam
+    │   ├── shoehorn.boot
+    │   ├── sys.config
+    │   └── vm.args
+    ├── COOKIE
+    └── start_erl.data

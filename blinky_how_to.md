@@ -46,6 +46,31 @@ Two things worth noting:
 1. Only the dependencies are shown - not the actual blinky code itself. Ie. it shows the packages loaded but not the files compiled. It presumes you know those.
 2. It shows all the dependencies - even the ones you don't use. Nerves has different "system" packages for the different target systems (Raspberry Pi Zero, Raspbery Pi 3, Beagleboard, ...) of which only one is loaded onto any given microSD for a specific board.
 
+ssh into blinky assuming you set up your ssh keys (defaults to build machine's key).
+- h(Toolshed) for helper commands
+- tree yields the entire file structure [blinky-file-tree.txt](see blinky-file-tree.txt)
+- RingLogger gives logging info
+
+## 3. RPi Zero Gadget
+create sd card per https://github.com/nerves-project/nerves_init_gadget
+- assume nerves installed per blinky first few steps
+- check archive is up to date
+  * mix local.nerves
+- Create a new project using the generator
+  * mix nerves.new mygadget --init-gadget
+- cd mygadget
+- get dependencies
+  * MIX_TARGET=rpi0 mix deps.get
+- build
+  * MIX_TARGET=rpi0 mix firmware
+- Copy the firmware to a MicroSD card (should find it if you have one mounted)
+  * MIX_TARGET=rpi0 mix firmware.burn
+
+  THis is just blinky like so not sure needed since can ssh to blinky
+
+
+
+
 ## 3. Add "Generic" Phoenix
 Before customizing into an OpenC2 interface, first put a vanilla Phoenix webserver.
 
