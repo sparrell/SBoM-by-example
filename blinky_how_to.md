@@ -8,7 +8,7 @@ Table of Contents:
 
 ## 1. Build normal blinky
 
-- install Nerves per PUTLINK
+- install Nerves per https://hexdocs.pm/nerves/installation.html
 - make sure homebrew is current
   * $ brew update
 - load dependencies
@@ -52,5 +52,5 @@ Before customizing into an OpenC2 interface, first put a vanilla Phoenix webserv
 ## 4. OpenC2 Phoenix API
 Customize the Phoenix webserver for a mimimalistic OpenC2 API.
 
-## 5. Custom OpenC2 API 
+## 5. Custom OpenC2 API
 Instead of using Phoenix, use a mimalistic howegrown API
