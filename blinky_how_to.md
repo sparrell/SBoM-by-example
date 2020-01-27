@@ -53,6 +53,7 @@ ssh into blinky assuming you set up your ssh keys (defaults to build machine's k
 
 ### 2.1 RPi Zero Gadget
 create sd card per https://github.com/nerves-project/nerves_init_gadget
+
 - assume nerves installed per blinky first few steps
 - check archive is up to date
   * mix local.nerves
@@ -66,10 +67,14 @@ create sd card per https://github.com/nerves-project/nerves_init_gadget
 - Copy the firmware to a MicroSD card (should find it if you have one mounted)
   * MIX_TARGET=rpi0 mix firmware.burn
 - install MicroSD card in RPi Zero
-- power it up and after 5-10 seconds, the light will blink pattern per code
+- power it up via usb (make sure to use usb, not power jack)
+- After 5-10 seconds, the light will blink pattern per code
+- you can ssh into this card from the computer you are attached to using the ssh keys of the computer that built the firmware
 
+This is MicroSD Yellow-1.
 
-
+### 2.2 RPi 4 Gadget
+do same for RPi 4 (ie use MIX_TARGET=rpi0)
 
 ## 3. Add "Generic" Phoenix
 Before customizing into an OpenC2 interface, first put a vanilla Phoenix webserver.
