@@ -65,8 +65,8 @@ create sd card per https://github.com/nerves-project/nerves_init_gadget
   * MIX_TARGET=rpi0 mix firmware
 - Copy the firmware to a MicroSD card (should find it if you have one mounted)
   * MIX_TARGET=rpi0 mix firmware.burn
-
-  THis is just blinky like so not sure needed since can ssh to blinky
+- install MicroSD card in RPi Zero
+- power it up and after 5-10 seconds, the light will blink pattern per code
 
 
 
@@ -76,6 +76,8 @@ Before customizing into an OpenC2 interface, first put a vanilla Phoenix webserv
 
 ## 4. OpenC2 Phoenix API
 Customize the Phoenix webserver for a mimimalistic OpenC2 API.
+
+This is based on
 
 ## 5. Custom OpenC2 API
 Instead of using Phoenix, use a mimalistic howegrown API
