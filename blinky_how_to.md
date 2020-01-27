@@ -19,15 +19,18 @@ Table of Contents:
   * $ mix archive.install hex nerves_bootstrap
 - create local copy of blinky
   * $ mix nerves.new blinky
+  * or can copy from this repo subdir blink1/blinky
 - get blinky dependencies
   * $ cd blinky
   * $ MIX_TARGET=rpi0 mix deps.get
 - build nerves_firmware
   * $ MIX_TARGET=rpi0 mix firmware
+- insert microSD into build computer
 - burn microSD
   * $ MIX_TARGET=rpi0 mix firmware.burn
 - load card, power, watch led blink once booted
   * connect hdmi if want to watch bootup
+- if used blinky from this repo, change blink pattern in @durations in blinky/lib/blinky.ex
 
 ## 2. Create SBoM for blinky
 - get sbom for HEX
@@ -76,13 +79,24 @@ This is MicroSD Yellow-1.
 ### 2.2 RPi 4 Gadget
 do same for RPi 4 (ie use MIX_TARGET=rpi0)
 
-## 3. Add "Generic" Phoenix
+## 3. Add networking
+based on https://github.com/nerves-project/nerves_examples/tree/master/hello_wifi
+
+## 4. Add "Generic" Phoenix
 Before customizing into an OpenC2 interface, first put a vanilla Phoenix webserver.
 
-## 4. OpenC2 Phoenix API
+Start by ignoring blinky/SBOM and just make phoenix from example - https://github.com/nerves-project/nerves_examples/tree/master/hello_phoenix
+
+Then combine with previous work
+
+## 5. OpenC2 Phoenix API
 Customize the Phoenix webserver for a mimimalistic OpenC2 API.
 
-This is based on
+Start by ignoring previous steps and make OC2 server on your laptop using https://github.com/sparrell/openc2-lycan-beam/tree/master/haha/elixir which is in the elixir programming language using Phoenix webserver running on BEAM.
 
-## 5. Custom OpenC2 API
-Instead of using Phoenix, use a mimalistic howegrown API
+Next step is putting this server on a RPi.
+
+Final step is combining with the previous work
+
+## 6. Custom OpenC2 API
+Instead of using Phoenix, use a minimalistic howegrown API (future work)
