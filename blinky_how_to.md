@@ -1,10 +1,10 @@
-blah blah
+See homepage for blah blah
 
 Table of Contents:
-- 1. Build normal blinky
-- 2. Create SBoM for blinky
-- 3. Add "Generic" Phoenix
-- 4. OpenC2 Phoenix API
+1. Build normal blinky
+2. Create SBoM for blinky
+3. Add "Generic" Phoenix
+4. OpenC2 Phoenix API
 
 ## 1. Build normal blinky
 
@@ -48,10 +48,10 @@ Two things worth noting:
 
 ssh into blinky assuming you set up your ssh keys (defaults to build machine's key).
 - h(Toolshed) for helper commands
-- tree yields the entire file structure [blinky-file-tree.txt](see blinky-file-tree.txt)
+- tree yields the [entire file structure](blinky-file-tree.txt)
 - RingLogger gives logging info
 
-## 3. RPi Zero Gadget
+### 2.1 RPi Zero Gadget
 create sd card per https://github.com/nerves-project/nerves_init_gadget
 - assume nerves installed per blinky first few steps
 - check archive is up to date
