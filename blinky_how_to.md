@@ -79,6 +79,19 @@ This is MicroSD Yellow-1.
 ### 2.2 RPi 4 Gadget
 do same for RPi 4 (ie use MIX_TARGET=rpi0)
 
+### 2.3 NeoPixel LED strip
+How to wire
+- https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring
+
+chip to convert 3.3V (RPi) to 5V (LED)
+- https://www.adafruit.com/product/1787
+
+wire breadboard (and then protoboard) via
+- https://core-electronics.com.au/tutorials/ws2812-addressable-leds-raspberry-pi-quickstart-guide.html
+- https://www.raspberrypi.org/forums/viewtopic.php?t=231971
+
+
+
 ## 3. Add networking
 based on https://github.com/nerves-project/nerves_examples/tree/master/hello_wifi
 
