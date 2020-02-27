@@ -90,6 +90,8 @@ wire breadboard (and then protoboard) via
 - https://core-electronics.com.au/tutorials/ws2812-addressable-leds-raspberry-pi-quickstart-guide.html
 - https://www.raspberrypi.org/forums/viewtopic.php?t=231971
 
+### 2.x Sanity test SBOM
+applications.started_...
 
 
 ## 3. Add networking
