@@ -1,0 +1,22 @@
+{
+  "name": "cyclonedx-nerves-prototype",
+  "version": "1.0.0",
+  "description": "Creates CycloneDX Software Bill-of-Materials (SBOM) from Nerves buildroot manifests",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "cyclonedx-nerves": "./bin/cyclonedx-nerves"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "@cyclonedx/bom": "github:CycloneDX/cyclonedx-node-module#master",
+    "commander": "^5.1.0",
+    "packageurl-js": "^0.0.2"
+  },
+  "files": [
+    "index.js",
+    "bin/"
+  ]
+}

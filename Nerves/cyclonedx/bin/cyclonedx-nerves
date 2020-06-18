@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+/*
+* MIT License
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all
+* copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* SPDX-License-Identifier: MIT
+*/
+const commander = require('commander');
+const program = require('../package.json');
+const bomHelper = require("../index.js");
+const fs = require("fs");
+
+commander
+  .description(program.description)
+  .version(program.version, '-v, --version')
+  .usage('[OPTIONS]')
+  .option('-m, --manifest <manifest>', "Nerves manifest from which to create a BOM from", "buildroot.show-info.json")
+  .option('-o, --output <output>', "Write BOM to file", "bom.json")
+  .parse(process.argv);
+
+let manifest = commander.manifest;
+let output = commander.output;
+
+if (!fs.existsSync(manifest)) {
+  console.log("Cannot find manifest file");
+  process.exit(1);
+}
+
+if (!output.endsWith("xml") && !output.endsWith("json")) {
+  console.log("Unsupported file extension. Output filename must end with .xml or .json");
+  process.exit(1);
+}
+
+bomHelper.createbom(manifest, output);
