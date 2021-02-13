@@ -38,13 +38,46 @@ blah blah, link to
 blah blah
 
 ## 2.1 C "Hello World"
-blah blah
+There is a repo,
+add link to sbe_c1
+
+build blah blah
+
+make release blah blah
+
+sbom at blah blah
 
 ## 2.2 Python "Hello World"
-blah blah
+blah blah about python, interpeter, pyc
+
+There is a repo,
+add link to sbe_p1
+
+run interactively blah blah
+
+compile .pyc blah blah
+
+make (github, not executable) release blah blah
+
+sbom at blah blah
 
 ## 2.3 Elixir "Hello World"
-blah blah
+blah blah about Elixir, interpeter, beam vm with .beam "binaries"
+which are not executables (as executable in section blah)
+Package managers (eg HEX - add link)
+and build systems (eg Mix - add link) use machine independent
+.beam files.
+Link to issues with interpreter, vm code, executables in later sections
+
+There is a repo,
+add link to sbe_e1
+
+build blah blah
+
+make release blah blah
+
+sbom at blah blah
+
 
 # 3. Elixir Blinky
 blah blah
