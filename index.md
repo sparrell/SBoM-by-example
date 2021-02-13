@@ -37,38 +37,38 @@ blah blah, link to
 # 2. "Hello World"
 blah blah
 
-## C "Hello World"
+## 2.1 C "Hello World"
 blah blah
 
-## Python "Hello World"
+## 2.2 Python "Hello World"
 blah blah
 
-## Elixir "Hello World"
+## 2.3 Elixir "Hello World"
 blah blah
 
 # 3. Elixir Blinky
 blah blah
 
-## Base Elixir Blinky 0-hop
+## 3.1 Base Elixir Blinky 0-hop
 blah blah
 
-## Base Elixir Blinky 1-hop
+## 3.2 Base Elixir Blinky 1-hop
 blah blah
 
-## Add LED Matrix
+## 3.3 Add LED Matrix
 blah blah
 
-## Add MQTT OpenC2
+## 3.4 Add MQTT OpenC2
 add in tortoise API server, and OpenC2 MQTT API
 
-## Replace MQTT with HTTP API (no HTML)
+## 3.5 Replace MQTT with HTTP API (no HTML)
 
-## Add HTML webserver with javascript
+## 3.6 Add HTML webserver with javascript
 note explosion of SBOM
 
-# Add in more SBOM hops
-## on raspberry pi - nerves OS
-## on cloud - docker image, debian linux OS
+# 4. Add in more SBOM hops
+## 4.1 on raspberry pi - nerves OS
+## 4.2 on cloud - docker image, debian linux OS
 
 # Cruft to clean up later
 <ul>
