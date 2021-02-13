@@ -41,6 +41,10 @@ blah blah
 There is a repo,
 add link to sbe_c1
 
+add some hello world history
+
+add pic of signed first edition book and screen shot of hello world page
+
 build blah blah
 
 make release blah blah
@@ -70,7 +74,9 @@ and build systems (eg Mix - add link) use machine independent
 Link to issues with interpreter, vm code, executables in later sections
 
 There is a repo,
-add link to sbe_e1
+add link to https://github.com/sparrell/SBE-HelloWorld-elixir
+
+
 
 build blah blah
 
