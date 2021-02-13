@@ -11,7 +11,30 @@ and showing various issues with building SBOMs.
 
 Add annotated Table of Contents here
 
-# "Hello World"
+- [1. What is an SBOM? Why would I have one?](#fix)
+- [2. "Hello World"](#fix)
+   * [2.1 C "Hello World"](#fix)
+   * [2.2 Python "Hello World"](#fix)
+   * [2.3 Elixir "Hello World"](#fix)
+- [3. Elixir Blinky](#fix)
+   * [3.1 Base Elixir Blinky 0-hop](#fix)
+   * [3.2 Base Elixir Blinky 1-hop](#fix)
+   * [3.3 Add LED Matrix](#fix)
+   * [3.4 Add MQTT OpenC2](#fix)
+   * [3.5 Replace MQTT with HTTP API (no HTML)](#fix)
+   * [3.6 Add HTML webserver with javascript](#fix)
+- [4. Add in more SBOM hops](#fix)
+   * [4.1 on raspberry pi - nerves OS](#fix)
+   * [4.2 on cloud - docker image, debian linux OS](#fix)
+- [5. Wrap up](fix)
+
+
+
+# 1. What is an SBOM? Why would I have one?
+blah blah, link to
+[SBOM background material](SbomBackground.md)
+
+# 2. "Hello World"
 blah blah
 
 ## C "Hello World"
@@ -23,7 +46,7 @@ blah blah
 ## Elixir "Hello World"
 blah blah
 
-# Elixir Blinky
+# 3. Elixir Blinky
 blah blah
 
 ## Base Elixir Blinky 0-hop
@@ -43,11 +66,9 @@ add in tortoise API server, and OpenC2 MQTT API
 ## Add HTML webserver with javascript
 note explosion of SBOM
 
-##
-
-## Add in more SBOM hops
-### on raspberry pi - nerves OS
-### on cloud - docker image, debian linux OS
+# Add in more SBOM hops
+## on raspberry pi - nerves OS
+## on cloud - docker image, debian linux OS
 
 # Cruft to clean up later
 <ul>
