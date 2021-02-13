@@ -1,0 +1,70 @@
+# Software Bill of Materials (SBoM) By example
+This project is creating a Software Bill of Materials (SBOM)
+for a nerves project running on a Raspberry Pi.
+
+It starts with some SBOM background (mainly referring to elsewhere);
+gives some some simple C, python, and elixir SBOM examples;
+and then builds thru several phases a fairly sophisticated
+IoT device SBOM.
+The phases include both increasing complexity of the device software,
+and showing various issues with building SBOMs.
+
+Add annotated Table of Contents here
+
+# "Hello World"
+blah blah
+
+## C "Hello World"
+blah blah
+
+## Python "Hello World"
+blah blah
+
+## Elixir "Hello World"
+blah blah
+
+# Elixir Blinky
+blah blah
+
+## Base Elixir Blinky 0-hop
+blah blah
+
+## Base Elixir Blinky 1-hop
+blah blah
+
+## Add LED Matrix
+blah blah
+
+## Add MQTT OpenC2
+add in tortoise API server, and OpenC2 MQTT API
+
+## Replace MQTT with HTTP API (no HTML)
+
+## Add HTML webserver with javascript
+note explosion of SBOM
+
+##
+
+## Add in more SBOM hops
+### on raspberry pi - nerves OS
+### on cloud - docker image, debian linux OS
+
+# Cruft to clean up later
+<ul>
+  <li><a href="SbomBackground.html">SBOM Background</a> information </li>
+  <li><a href="blinky_how_to.html">how to</a> make the basic blinky </li>
+  <li>how to make the sbom for the basic blinky</li>
+  <li>how to add networking</li>
+  <li>how to add phoenix api server</li>
+  <li>how to add openc2</li>
+</ul>
+
+<p>Table of Contents
+<ul>
+<li> <a href="https://github.com/oasis-tcs/openc2-usecases/tree/master/Cybercom-Plugfest">OpenC2 CYBERCOM Plugfest/Hackathon page</a>  </li>
+<li>  Link to my HEX sbom package page  </li>
+<li>  <a href="blinky_how_to.html">blinky how to</a>  </li>
+<li>  Link to my Blinky SBoM page  </li>
+<li>  Link to my other sboms page  </li>
+<li>  <a href="blinky_pkglist.txt">blinky_pkglist.txt</a>  </li>
+</ul>
